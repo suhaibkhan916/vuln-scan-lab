@@ -1,0 +1,12 @@
+# Vulnerable target for the lab. No ports are published to the host;
+# it is only reachable from the scanner on the internal compose network.
+services:
+  metasploitable:
+    image: tleemcjr/metasploitable2
+    hostname: metasploitable
+    command: ["sh", "-c", "/bin/services.sh && tail -f /dev/null"]
+    tty: true
+    networks:
+      default:
+        aliases:
+          - metasploitable

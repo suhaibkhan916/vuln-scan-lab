@@ -1,0 +1,13 @@
+ID,Finding,Ports,CVSS,Severity,CVE,Action,Owner,Target date,Status,Verification
+R-01,Ingreslock backdoor root shell,1524,10.0,Critical,,Remove inetd entry on 1524 and rebuild host,Lab owner,2026-11-08,Open,Port 1524 closed on rescan
+R-02,vsftpd 2.3.4 backdoor,21;6200,9.8,Critical,CVE-2011-2523,Replace vsftpd with clean current build or disable FTP,Lab owner,2026-11-08,Open,Backdoor check negative and 6200 closed
+R-03,rexec/rlogin/rsh without password,512;513;514,10.0,Critical,,Disable r-services in inetd and use SSH,Lab owner,2026-11-08,Open,Ports 512-514 closed
+R-04,Samba usermap_script RCE,445,6.0,Critical,CVE-2007-2447,Upgrade Samba past 3.0.25 or remove username map script,Lab owner,2026-11-08,Open,Active check negative
+R-05,DistCC remote code execution,3632,9.3,Critical,CVE-2004-2687,Disable distccd or restrict with --allow,Lab owner,2026-11-08,Open,Port 3632 closed
+R-06,dRuby remote code execution,8787,10.0,Critical,,Stop DRb service or bind to localhost,Lab owner,2026-11-08,Open,Port 8787 closed
+R-07,UnrealIRCd 3.2.8.1 backdoor,6667;6697,8.1,Critical,CVE-2010-2075,Remove IRC daemon,Lab owner,2026-11-08,Open,Ports 6667/6697 closed
+R-08,Default credentials (PostgreSQL and FTP),21;2121;5432,9.0,Critical,,Change default passwords and bind PostgreSQL to localhost,Lab owner,2026-11-08,Open,Default login checks negative
+R-09,Outdated web apps (TWiki/PHP-CGI/WebDAV PUT/phpinfo),80,10.0,High,CVE-2008-5304;CVE-2008-5305;CVE-2012-1823,Remove TWiki phpinfo.php and WebDAV PUT; upgrade PHP,Lab owner,2026-12-01,Open,Web findings gone on rescan
+R-10,Ubuntu 8.04 end of life,general,10.0,High,,Rebuild on supported Ubuntu LTS,Lab owner,2026-12-01,Open,OS EOL check negative
+R-11,Cleartext protocols and weak crypto,22;23;25;5432,7.4,Medium,CVE-2014-0224,Disable Telnet/FTP; TLS 1.2+; 2048-bit certs; modern SSH KEX,Lab owner,2027-01-30,Open,SSL/TLS and SSH checks clean
+R-12,Information disclosure (anon FTP/VRFY/TRACE/dir listing),21;25;80,6.4,Medium,,Disable anonymous FTP VRFY/EXPN TRACE and directory listing,Lab owner,2027-01-30,Open,Checks negative
